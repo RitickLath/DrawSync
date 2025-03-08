@@ -20,6 +20,12 @@ importers:
 
   apps/htttp-server:
     dependencies:
+      '@repo/data-sanitization':
+        specifier: workspace:*
+        version: link:../../packages/data-sanitization
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
       '@types/bcrypt':
         specifier: ^5.0.2
         version: 5.0.2
@@ -45,12 +51,6 @@ importers:
         specifier: ^9.0.2
         version: 9.0.2
     devDependencies:
-      '@repo/data-sanitization':
-        specifier: workspace:*
-        version: link:../../packages/data-sanitization
-      '@repo/db':
-        specifier: workspace:*
-        version: link:../../packages/db
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
@@ -94,6 +94,9 @@ importers:
 
   apps/ws-server:
     dependencies:
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../packages/db
       '@types/express':
         specifier: ^5.0.0
         version: 5.0.0
@@ -103,16 +106,19 @@ importers:
       express:
         specifier: ^4.21.2
         version: 4.21.2
+      jsonwebtoken:
+        specifier: ^9.0.2
+        version: 9.0.2
       ws:
         specifier: ^8.18.1
         version: 8.18.1
     devDependencies:
-      '@repo/db':
-        specifier: workspace:*
-        version: link:../../packages/db
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
+      '@types/jsonwebtoken':
+        specifier: ^9.0.9
+        version: 9.0.9
 
   packages/data-sanitization:
     dependencies:
@@ -2298,10 +2304,6 @@ packages:
     resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
     engines: {node: '>=10'}
     hasBin: true
-
-  semver@7.6.3:
-    resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
-    engines: {node: '>=10'}
 
   semver@7.7.1:
     resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
@@ -5083,9 +5085,6 @@ snapshots:
 
   semver@7.6.2: {}
 
-  semver@7.6.3:
-    optional: true
-
   semver@7.7.1: {}
 
   send@0.19.0:
@@ -5150,7 +5149,7 @@ snapshots:
     dependencies:
       color: 4.2.3
       detect-libc: 2.0.3
-      semver: 7.6.3
+      semver: 7.7.1
     optionalDependencies:
       '@img/sharp-darwin-arm64': 0.33.5
       '@img/sharp-darwin-x64': 0.33.5

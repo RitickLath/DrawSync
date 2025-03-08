@@ -64,7 +64,9 @@ export const signin = async (req: Request, res: Response) => {
 
   try {
     // Check if the user exists
-    const isExists = await prismaClient.user.findUnique({ where: { email } });
+    const isExists = await prismaClient.user.findUnique({
+      where: { email },
+    });
 
     if (!isExists) {
       res.status(404).json({

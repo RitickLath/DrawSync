@@ -39,3 +39,10 @@ export const mySignInSchema = z.object({
     .min(8, { message: "Password must be at least 8 characters long." })
     .max(15, { message: "Password must be at most 15 characters long." }),
 });
+
+export const CreateRoomSchema = z.object({
+  name: z
+    .string()
+    .min(3, { message: "Name must be at atleast 3 characters long." })
+    .max(20, { message: "Name must be at most 20 characters long." }),
+});

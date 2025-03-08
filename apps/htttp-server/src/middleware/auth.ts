@@ -12,7 +12,7 @@ export const authMiddleware = async (
 
   if (decoded) {
     //@ts-ignore
-    req.id = decoded.id;
+    req.userId = decoded.id;
     next();
   } else {
     res.status(403).json({ status: false, message: "Unauthorizd" });
